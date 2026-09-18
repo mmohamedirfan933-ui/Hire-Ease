@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hire Ease</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            Hire<span>Ease</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#jobs">Find Jobs</a>
+            <a href="#post">Post a Job</a>
+            <a href="#dashboard">Dashboard</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="login-btn" onclick="openLogin()">
+                Login
+            </button>
+
+            <button class="primary-btn" onclick="openRegister()">
+                Get Started
+            </button>
+        </div>
+
+    </header>
+
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                SMART • SIMPLE • TRUSTED
+            </p>
+
+            <h1>
+                Find the right opportunity.
+                <span>Hire with ease.</span>
+            </h1>
+
+            <p>
+                Hire Ease connects employers with skilled job seekers
+                for short-term and full-time work through one simple
+                digital platform.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn"
+                    onclick="goToJobs()">
+                    Find Jobs
+                </button>
+
+                <button class="outline-btn"
+                    onclick="goToPost()">
+                    Post a Job
+                </button>
+
+            </div>
+
+            <div class="stats">
+
+                <div>
+                    <b>1,240+</b>
+                    <small>Active Jobs</small>
+                </div>
+
+                <div>
+                    <b>850+</b>
+                    <small>Verified Workers</small>
+                </div>
+
+                <div>
+                    <b>4.8/5</b>
+                    <small>User Rating</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="floating one">
+                ✓ Verified Workers
+            </div>
+
+            <div class="preview">
+
+                <div class="preview-title">
+                    <b>Hire Ease</b>
+                    <span>● Live</span>
+                </div>
+
+                <div class="search-box">
+                    🔍 Search jobs by skill or title
+                </div>
+
+                <div class="preview-job">
+
+                    <div class="job-icon">
+                        💻
+                    </div>
+
+                    <div>
+                        <b>Frontend Developer</b>
+                        <small>Coimbatore • 3 days</small>
+                    </div>
+
+                    <strong>92%</strong>
+
+                </div>
+
+
+                <div class="preview-job">
+
+                    <div class="job-icon">
+                        📱
+                    </div>
+
+                    <div>
+                        <b>UI Designer</b>
+                        <small>Remote • 1 week</small>
+                    </div>
+
+                    <strong>87%</strong>
+
+                </div>
+
+
+                <div class="preview-job">
+
+                    <div class="job-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+                        <b>Electronics Technician</b>
+                        <small>Coimbatore • 2 days</small>
+                    </div>
+
+                    <strong>84%</strong>
+
+                </div>
+
+            </div>
+
+            <div class="floating two">
+                ⭐ 4.9 Rated
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how">
+
+        <p class="small-title">
+            HOW IT WORKS
+        </p>
+
+        <h2>
+            One platform. Complete hiring journey.
+        </h2>
+
+
+        <div class="steps">
+
+            <div class="step">
+                <span>01</span>
+                <h3>Create Profile</h3>
+                <p>
+                    Employers and job seekers create their profiles.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>02</span>
+                <h3>Post or Find</h3>
+                <p>
+                    Post job details or search for suitable jobs.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>03</span>
+                <h3>Skill Matching</h3>
+                <p>
+                    Match jobs with workers based on skills.
+                </p>
+            </div>
+
+            <div class="step">
+                <span>04</span>
+                <h3>Work & Rate</h3>
+                <p>
+                    Complete the work and provide ratings.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOBS -->
+    <section id="jobs" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <p class="small-title">JOB SEEKER</p>
+
+                <h2>
+                    Find your next opportunity
+                </h2>
+
+                <p>
+                    Search jobs by skill, location and availability.
+                </p>
+            </div>
+
+            <button class="primary-btn"
+                onclick="openRegister()">
+                Create Profile
+            </button>
+
+        </div>
+
+
+        <div class="filters">
+
+            <input
+                id="search"
+                type="text"
+                placeholder="Search job or skill..."
+                onkeyup="displayJobs()">
+
+            <select id="location"
+                onchange="displayJobs()">
+
+                <option value="">All Locations</option>
+                <option>Coimbatore</option>
+                <option>Dindigul</option>
+                <option>Chennai</option>
+                <option>Remote</option>
+
+            </select>
+
+
+            <select id="type"
+                onchange="displayJobs()">
+
+                <option value="">All Types</option>
+                <option>Short-term</option>
+                <option>Part-time</option>
+                <option>Full-time</option>
+
+            </select>
+
+        </div>
+
+
+        <div id="jobContainer"></div>
+
+    </section>
+
+
+    <!-- POST JOB -->
+    <section id="post" class="page">
+
+        <div class="page-heading">
+
+            <div>
+
+                <p class="small-title">
+                    EMPLOYER
+                </p>
+
+                <h2>
+                    Post a New Job
+                </h2>
+
+                <p>
+                    Find skilled workers for your requirement.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <form class="job-form"
+            onsubmit="postJob(event)">
+
+            <div class="form-grid">
+
+                <label>
+                    Job Title
+                    <input id="jobTitle"
+                        required
+                        placeholder="Frontend Developer">
+                </label>
+
+
+                <label>
+                    Company
+                    <input id="company"
+                        required
+                        placeholder="ABC Technologies">
+                </label>
+
+
+                <label>
+                    Location
+
+                    <select id="jobLocation">
+
+                        <option>Coimbatore</option>
+                        <option>Dindigul</option>
+                        <option>Chennai</option>
+                        <option>Remote</option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Job Type
+
+                    <select id="jobType">
+
+                        <option>Short-term</option>
+                        <option>Part-time</option>
+                        <option>Full-time</option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Required Skills
+
+                    <input id="skills"
+                        required
+                        placeholder="C, Embedded, PCB">
+                </label>
+
+
+                <label>
+                    Pay
+
+                    <input id="pay"
+                        required
+                        placeholder="₹1500/day">
+                </label>
+
+            </div>
+
+
+            <label>
+                Job Description
+
+                <textarea
+                    id="description"
+                    required
+                    placeholder="Describe the job..."></textarea>
+
+            </label>
+
+
+            <button class="primary-btn"
+                type="submit">
+
+                Publish Job
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page">
+
+        <div class="page-heading">
+
+            <div>
+
+                <p class="small-title">
+                    USER DASHBOARD
+                </p>
+
+                <h2>
+                    Welcome Back 👋
+                </h2>
+
+                <p>
+                    Track your applications and matched jobs.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard">
+
+            <div class="dashboard-card">
+
+                <span>Applications</span>
+
+                <b id="applicationCount">
+                    3
+                </b>
+
+                <small>
+                    Active applications
+                </small>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>Matched Jobs</span>
+
+                <b>
+                    8
+                </b>
+
+                <small>
+                    Based on your skills
+                </small>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>Profile Rating</span>
+
+                <b>
+                    4.8 ⭐
+                </b>
+
+                <small>
+                    User rating
+                </small>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>Completed Work</span>
+
+                <b>
+                    12
+                </b>
+
+                <small>
+                    Jobs completed
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-panel">
+
+            <h3>
+                Recommended Jobs
+            </h3>
+
+            <div id="recommended"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal"
+        class="modal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="closeLogin()">
+                ×
+            </button>
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p>
+                Login to your Hire Ease account.
+            </p>
+
+            <input
+                type="email"
+                placeholder="Email">
+
+            <input
+                type="password"
+                placeholder="Password">
+
+            <button
+                class="primary-btn full"
+                onclick="login()">
+
+                Login
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- REGISTER MODAL -->
+    <div id="registerModal"
+        class="modal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="closeRegister()">
+                ×
+            </button>
+
+            <h2>
+                Create Profile
+            </h2>
+
+            <p>
+                Select your role.
+            </p>
+
+
+            <div class="roles">
+
+                <button onclick="selectRole(this)">
+                    👤
+                    <b>Job Seeker</b>
+                    <small>Find jobs</small>
+                </button>
+
+                <button onclick="selectRole(this)">
+                    🏢
+                    <b>Employer</b>
+                    <small>Hire workers</small>
+                </button>
+
+            </div>
+
+
+            <input
+                id="username"
+                placeholder="Your Name">
+
+            <input
+                type="email"
+                placeholder="Email">
+
+
+            <button
+                class="primary-btn full"
+                onclick="register()">
+
+                Create Account
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            <div class="logo-box">H</div>
+            Hire<span>Ease</span>
+        </div>
+
+        <p>
+            Bridging the gap between job seekers
+            and short-term work opportunities.
+        </p>
+
+        <small>
+            © 2026 Hire Ease
+        </small>
+
+    </footer>
+
+
+    <div id="toast">
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
